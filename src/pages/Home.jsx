@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar/Navbar";
 
-import "../components/Navbar/Navbar.css";
+import "../components/Navbar/navbar.css";
 import MobileNavbar from "../components/Navbar/MobileNavbar";
 import Movies from "./Movies";
 import Tv from "./Tv";
