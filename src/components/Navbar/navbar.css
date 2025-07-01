@@ -130,6 +130,7 @@
 .mobile-nav {
     display: flex;
     justify-content: space-around;
+    padding-right: 30px;
     align-items: center;
     background-color: var(--nav-bg-color);
     height: var(--nav-height);
