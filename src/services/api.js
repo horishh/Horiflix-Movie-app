@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const apiKey = process.env.REACT_APP_API_KEY;
-const baseUrl = process.env.REACT_APP_BASE_URL;
+const apiKey = import.meta.env.VITE_REACT_APP_API_KEY;
+const baseUrl = import.meta.env.VITE_REACT_APP_BASE_URL;
 
 const fetchFromApi = async (endpoint) => {
   try {
@@ -11,7 +11,6 @@ const fetchFromApi = async (endpoint) => {
         language: "en-US",
       },
     });
-    console.log(`Fetched from ${endpoint}:`, response.data);
     return response.data.results;
   } catch (error) {
     console.error("API error:", error.response?.data || error.message);
