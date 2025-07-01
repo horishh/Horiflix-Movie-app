@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+/* === Root Styles === */
+:root {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* === Reset === */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+/* === Theme: Light === */
+body.light {
+    --bg-color: #ededed;
+    --text-color: #000;
+    --color-gold: #f59e0b;
+
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+body.light .navbar-container {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    box-shadow: 0px 5px 7px -9px #242424;
+}
+
+body.light .nav-link:hover {
+    color: var(--color-gold);
+    transform: scale(1.1);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+
+body.light .mobile-nav {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    box-shadow: 1px 20px 24px 7px #242424;
+}
+
+body.light .icons {
+    color: #242424;
+}
+
+body.light .icons.active {
+    color: var(--color-gold);
+}
+
+body.light .search input {
+    background-color: #dbdbdb;
+}
+
+body.light .search-icon {
+    color: #242424;
+}
+
+body.light .search-icon:hover {
+    color: var(--color-gold);
+    transform: scale(1.1);
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+body.light .logo,
+.themeIconMoon {
+    color: #242424;
+}
+
+
+/* === Theme: Dark === */
+body.dark {
+    color: var(--text-color);
+}
+
+body.dark .content {
+    background-color: #242424;
+}
+
+body.dark .nav-link:hover {
+    color: var(--color-gold);
+    transform: scale(1.1);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+
+/* === Theme Icons === */
+.themeIconSun,
+.themeIconMoon {
+    font-size: var(--font-size-lg, 1.25rem);
+    transition: transform 0.3s ease, font-size 0.3s ease;
+    cursor: pointer;
+}
+
+.themeIconSun {
+    color: var(--color-gold);
+}
+
+.themeIconSun:hover,
+.themeIconMoon:hover {
+    transform: rotate(15deg);
+}

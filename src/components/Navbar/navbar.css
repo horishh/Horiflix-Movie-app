@@ -1,0 +1,209 @@
+/* === Root Variables === */
+:root {
+    --bg-color: #242424;
+    --nav-bg-color: #000;
+    --text-color: #f8fafc;
+    --accent-color: #1d9ce1;
+    --nav-height: 55px;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.25rem;
+    --color-gold: #fbc607;
+}
+
+
+/* === Navbar Layout === */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--nav-bg-color);
+    color: var(--text-color);
+    height: var(--nav-height);
+    padding: 0 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+
+/* === Logo === */
+.logo {
+    font-size: var(--font-size-lg);
+    font-weight: bold;
+    color: var(--color-gold);
+    margin-right: 10px;
+}
+
+
+/* === Navigation Links === */
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.nav-link {
+    margin: 0 10px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: var(--font-size-base);
+}
+
+.nav-link.active {
+    color: var(--color-gold);
+    font-weight: bold;
+}
+
+
+/* === Search Bar === */
+.nav-search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search input {
+    padding: 0.2rem 0.8rem;
+    border-radius: 15px;
+    border: none;
+    font-size: 0.9rem;
+}
+
+.search input:focus {
+    outline: 1px solid var(--color-gold);
+}
+
+.search-icon {
+    font-size: var(--font-size-lg);
+    margin: 0 5px;
+    background: none;
+    border: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.search-icon:hover {
+    color: var(--color-gold);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+
+/* === Theme Button & Icons === */
+.theme-toggle,
+.icons {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: none;
+    border: 0;
+}
+
+.icons.active {
+    color: var(--color-gold);
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* === Page Content Wrapper === */
+.content {
+    margin-top: 49px;
+}
+
+
+/* === Mobile Navigation === */
+.mobile-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--nav-bg-color);
+    height: var(--nav-height);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    font-size: var(--font-size-lg);
+    cursor: pointer;
+}
+
+
+/* === Responsive: Mobile (max 768px) === */
+@media (max-width: 768px) {
+    .navbar-container {
+        height: 56px;
+        padding: 0 1rem;
+    }
+
+    .nav-link {
+        display: none;
+    }
+
+    .nav-search {
+        justify-content: space-evenly;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .search input {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .content {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .icon {
+        margin: 0 auto;
+    }
+}
+
+
+/* === Responsive: Desktop (min 768px) === */
+@media (min-width: 768px) {
+    .mobile-nav {
+        display: none;
+    }
+
+    .navbar-container {
+        padding: 0 3rem;
+        max-width: 72rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .content {
+        margin-top: var(--nav-height);
+        max-width: 72rem;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0px -9px 20px -5px #242424;
+    }
+
+    .nav-search {
+        display: flex;
+    }
+
+    .desktop-nav>p:first-of-type {
+        margin-left: 35px;
+    }
+}

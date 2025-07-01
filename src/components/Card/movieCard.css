@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.card-btns {
+    position: absolute;
+    top: 10rem;
+    left: 4;
+    padding: 6px 20px;
+    background-color: var(--color-amber-500);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.page-margin {
+    margin-top: 3rem;
+}
+
+.card-btns:hover {
+    transform: scale(1.1);
+    background-color: var(--color-amber-500);
+}
+
+@media (max-width: 500px) {
+    .card {
+        width: 150px;
+    }
+
+    .carousel-mobile {
+        height: 310px;
+    }
+
+    .carousel-btn {
+        display: none;
+    }
+}
+
+@media (min-width: 500px) {}
