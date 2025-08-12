@@ -11,8 +11,9 @@ const Carousel = ({ title, items = [] }) => {
   };
 
   return (
-    <div className="my-8">
-      <h2 className="text-center text-xl font-semibold mb-4">{title}</h2>
+    <div className="mb-[-20px]">
+      <h2 className="text-center text-xl font-semibold mb-6 pt-5">{title}</h2>
+
       <div className="relative max-w-[1400px] mx-auto carousel-mobile">
         <div
           ref={carouselRef}

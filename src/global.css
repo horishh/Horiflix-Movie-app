@@ -29,6 +29,10 @@ li {
     list-style: none;
 }
 
+body {
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
 
 /* === Theme: Light === */
 body.light {
