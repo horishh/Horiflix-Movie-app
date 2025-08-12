@@ -1,0 +1,36 @@
+.nav-search {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.search {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.search input {
+    padding: 0.2rem 0.8rem;
+    border-radius: 15px;
+    border: none;
+    font-size: 0.9rem;
+}
+
+.search input:focus {
+    outline: 1px solid var(--color-gold);
+}
+
+.search-icon {
+    font-size: var(--font-size-lg);
+    margin: 0 5px;
+    background: none;
+    border: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.search-icon:hover {
+    color: var(--color-gold);
+    transform: scale(1.1);
+    cursor: pointer;
+}

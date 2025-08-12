@@ -1,63 +1,64 @@
 import React, { useEffect, useState } from "react";
 import { getMovies } from "../services/api";
-import Navbar from "../components/Navbar/Navbar";
-import MobileNavbar from "../components/Navbar/MobileNavbar";
-import "../components/Card/movieCard.css";
+import { useOutletContext } from "react-router-dom";
 import Carousel from "../components/Carousel";
+import Card from "../components/Card/Card";
 
 const Movies = () => {
   const [popularMovies, setPopularMovies] = useState([]);
   const [topRatedMovies, setTopRatedMovies] = useState([]);
   const [nowPlayingMovies, setNowPlayingMovies] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+
+  const { movies: searchResults = [] } = useOutletContext() || {};
 
   useEffect(() => {
-    const loadMovies = async () => {
-      try {
+    if (!searchResults.length) {
+      const fetchMovies = async () => {
         setLoading(true);
-        setError(null);
         const [popular, topRated, nowPlaying] = await Promise.all([
           getMovies("popular"),
           getMovies("top_rated"),
           getMovies("now_playing"),
         ]);
-
         setPopularMovies(popular);
         setTopRatedMovies(topRated);
         setNowPlayingMovies(nowPlaying);
-      } catch (error) {
-        console.error("Failed to load Movie data", error);
-      } finally {
         setLoading(false);
-      }
-    };
-    loadMovies();
-  }, []);
+      };
+      fetchMovies();
+    } else {
+      setLoading(false);
+    }
+  }, [searchResults]);
 
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <p>Loading...</p>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="flex justify-center items-center h-screen text-red-600">
-        <p>{error}</p>
-      </div>
-    );
-  }
+  if (loading) return <p>Loading...</p>;
 
   return (
     <div>
-      <Navbar />
-      <Carousel title="Popular Movies" items={popularMovies} />
-      <Carousel title="Top Rated Movies" items={topRatedMovies} />
-      <Carousel title="Now Playing Movies" items={nowPlayingMovies} />
-      <MobileNavbar />
+      {searchResults.length > 0 ? (
+        <div className="search-results flex flex-wrap gap-4">
+          {searchResults.map((movie) => (
+            <Card
+              key={movie.id}
+              title={movie.title}
+              poster_path={
+                movie.poster_path
+                  ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                  : "/placeholder.png"
+              }
+              date={movie.release_date}
+              rating={movie.vote_average}
+            />
+          ))}
+        </div>
+      ) : (
+        <>
+          <Carousel title="Popular Movies" items={popularMovies} />
+          <Carousel title="Top Rated Movies" items={topRatedMovies} />
+          <Carousel title="Now Playing Movies" items={nowPlayingMovies} />
+        </>
+      )}
     </div>
   );
 };

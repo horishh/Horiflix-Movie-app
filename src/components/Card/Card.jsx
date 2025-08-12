@@ -6,7 +6,7 @@ const Card = ({ title, poster_path, date, rating }) => {
   return (
     <div className="card w-[200px] flex flex-col shadow-md text-center rounded-lg cursor-pointer overflow-hidden ml-1">
       <img
-        className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300"
+        className="w-full h-[300px] object-cover hover:scale-105 transition-transform duration-300"
         src={poster_path}
         alt={title}
         onError={(e) => (e.target.src = "/placeholder.png")}

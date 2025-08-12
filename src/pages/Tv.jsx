@@ -1,63 +1,64 @@
-import React, { useState, useEffect } from "react";
-import Navbar from "../components/Navbar/Navbar";
-import MobileNavbar from "../components/Navbar/MobileNavbar";
+import React, { useEffect, useState } from "react";
 import { getTv } from "../services/api";
+import { useOutletContext } from "react-router-dom";
 import Carousel from "../components/Carousel";
+import Card from "../components/Card/Card";
 
 const Tv = () => {
   const [popularTv, setPopularTv] = useState([]);
   const [topRatedTv, setTopRatedTv] = useState([]);
   const [onAirTv, setOnAirTv] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+
+  const { tv: searchResults = [] } = useOutletContext() || {};
 
   useEffect(() => {
-    const loadTvShows = async () => {
-      try {
+    if (!searchResults.length) {
+      const fetchTvShows = async () => {
         setLoading(true);
-        setError(null);
         const [popular, topRated, onAir] = await Promise.all([
           getTv("popular"),
           getTv("top_rated"),
           getTv("on_the_air"),
         ]);
-
         setPopularTv(popular);
         setTopRatedTv(topRated);
         setOnAirTv(onAir);
-      } catch (error) {
-        console.error("Failed to load TV data", error);
-      } finally {
         setLoading(false);
-      }
-    };
+      };
+      fetchTvShows();
+    } else {
+      setLoading(false);
+    }
+  }, [searchResults]);
 
-    loadTvShows();
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <p>Loading...</p>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="flex justify-center items-center h-screen text-red-600">
-        <p>{error}</p>
-      </div>
-    );
-  }
+  if (loading) return <p>Loading...</p>;
 
   return (
     <div>
-      <Navbar />
-      <Carousel title="Popular TV" items={popularTv} />
-      <Carousel title="Top Rated TV" items={topRatedTv} />
-      <Carousel title="On the Air TV" items={onAirTv} />
-      <MobileNavbar />
+      {searchResults.length > 0 ? (
+        <div className="search-results flex flex-wrap gap-4">
+          {searchResults.map((show) => (
+            <Card
+              key={show.id}
+              title={show.name}
+              poster_path={
+                show.poster_path
+                  ? `https://image.tmdb.org/t/p/w500${show.poster_path}`
+                  : "/placeholder.png"
+              }
+              date={show.first_air_date}
+              rating={show.vote_average}
+            />
+          ))}
+        </div>
+      ) : (
+        <>
+          <Carousel title="Popular TV" items={popularTv} />
+          <Carousel title="Top Rated TV" items={topRatedTv} />
+          <Carousel title="On The Air TV" items={onAirTv} />
+        </>
+      )}
     </div>
   );
 };

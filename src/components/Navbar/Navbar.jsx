@@ -1,12 +1,11 @@
 import "../Navbar/navbar.css";
-import { Link } from "react-router-dom";
 import { IoSunny } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import { BsMoonStars } from "react-icons/bs";
-import { FiSearch } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
+import SearchBar from "../SearchBar/SearchBar";
 
-const Navbar = () => {
+const Navbar = ({ onSearch }) => {
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem("theme") || "light";
   });
@@ -48,13 +47,8 @@ const Navbar = () => {
         </NavLink>
       </div>
 
-      <div className="nav-search">
-        <form className="search" onSubmit={(e) => e.preventDefault()}>
-          <input type="text" placeholder="Search..." />
-          <button className="search-icon">
-            <FiSearch />
-          </button>
-        </form>
+      <div className="nav-right">
+        <SearchBar onSearch={onSearch} />
 
         <button className="theme-toggle" onClick={toggleTheme}>
           {theme === "dark" ? (
