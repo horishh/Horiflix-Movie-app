@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { getMovieDetail, getTvDetail } from "../services/api";
 import "../components/Card/movieCard.css";
 import { IoPlayCircleOutline } from "react-icons/io5";
-import Loading from "../assets/loading";
+import Loading from "../components/Loading";
 
 /**
  * Detail component
