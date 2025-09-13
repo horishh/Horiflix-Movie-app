@@ -3,7 +3,7 @@ import { getTv } from "../services/api";
 import { useOutletContext } from "react-router-dom";
 import Carousel from "../components/Carousel";
 import Card from "../components/Card/Card";
-import Loading from "../assets/loading";
+import Loading from "../components/Loading";
 
 const Tv = () => {
   const [popularTv, setPopularTv] = useState([]);
