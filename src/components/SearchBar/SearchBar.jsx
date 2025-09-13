@@ -22,8 +22,8 @@ const SearchBar = ({ onSearch }) => {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
-      <button type="submit" className="search-icon">
-        <FiSearch />
+      <button type="submit">
+        <FiSearch className="search-icon" />
       </button>
     </form>
   );

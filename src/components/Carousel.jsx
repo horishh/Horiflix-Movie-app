@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import Card from "./Card/Card";
 
-const Carousel = ({ title, items = [] }) => {
+const Carousel = ({ title, items = [], type = "movie" }) => {
   const carouselRef = useRef(null);
 
   const scroll = (offset) => {
@@ -23,6 +23,8 @@ const Carousel = ({ title, items = [] }) => {
           {items.map((item) => (
             <div key={item.id} className="inline-block mr-4 align-top">
               <Card
+                id={item.id}
+                type={type}
                 poster_path={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
                 title={item.title || item.name}
                 date={item.release_date || item.first_air_date}

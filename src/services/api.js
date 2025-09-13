@@ -12,7 +12,7 @@ const fetchFromApi = async (endpoint, params = {}) => {
         ...params,
       },
     });
-    return response.data.results;
+    return response.data.results ?? response.data;
   } catch (error) {
     console.error("API error:", error.response?.data || error.message);
     return [];
@@ -27,3 +27,9 @@ export const getTv = (category = "popular") => fetchFromApi(`/tv/${category}`);
 export const searchMovies = (query) => fetchFromApi("/search/movie", { query });
 
 export const searchTv = (query) => fetchFromApi("/search/tv", { query });
+
+export const getMovieDetail = (id) =>
+  fetchFromApi(`/movie/${id}`, { append_to_response: "videos" });
+
+export const getTvDetail = (id) =>
+  fetchFromApi(`/tv/${id}`, { append_to_response: "videos" });

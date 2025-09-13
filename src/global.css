@@ -44,6 +44,8 @@ body.light {
     color: var(--text-color);
 }
 
+
+
 body.light .navbar-container {
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -86,11 +88,10 @@ body.light .search-icon:hover {
     cursor: pointer;
 }
 
-body.light .logo,
+body.light,
 .themeIconMoon {
     color: #242424;
 }
-
 
 /* === Theme: Dark === */
 body.dark {
@@ -98,6 +99,10 @@ body.dark {
 }
 
 body.dark .content {
+    background-color: #1d1d1d;
+}
+
+body.dark .card {
     background-color: #242424;
 }
 
@@ -111,13 +116,17 @@ body.dark .nav-link:hover {
 /* === Theme Icons === */
 .themeIconSun,
 .themeIconMoon {
-    font-size: var(--font-size-lg, 1.25rem);
     transition: transform 0.3s ease, font-size 0.3s ease;
     cursor: pointer;
 }
 
 .themeIconSun {
     color: var(--color-gold);
+    font-size: 1.7rem;
+}
+
+.themeIconMoon {
+    font-size: 1.5rem;
 }
 
 .themeIconSun:hover,

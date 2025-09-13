@@ -1,14 +1,17 @@
 @import "tailwindcss";
 
+/* Hide scrollbar for WebKit browsers */
 .carousel::-webkit-scrollbar {
     display: none;
 }
 
+/* Hide scrollbar for Firefox and IE/Edge */
 .carousel {
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
 
+/* Styling for card action buttons */
 .card-btns {
     position: absolute;
     top: 10rem;
@@ -25,12 +28,40 @@
     background-color: var(--color-amber-500);
 }
 
+/* Center search results on the page */
 .search-results {
     display: flex;
     justify-content: center;
     padding-top: 20px;
 }
 
+/* Backdrop image styling with blending */
+.backdrop {
+    background-image: var(--backdrop-url);
+    background-color: rgba(0, 0, 0, 0.2);
+    background-blend-mode: darken;
+}
+
+/* Trailer button container */
+.trailer-btn {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Limit overview text to 2 lines with ellipsis */
+.overview {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+/* Responsive styling for small screens */
 @media (max-width: 500px) {
     .card {
         width: 150px;
@@ -43,6 +74,115 @@
     .carousel-btn {
         display: none;
     }
+
+    /* Center movie details on small devices */
+    .movie-detail-container {
+        justify-self: center;
+        padding: 10px;
+        margin: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Use poster image as backdrop on small devices */
+    .backdrop {
+        background-image: var(--poster-url);
+        background-color: rgba(0, 0, 0, 0);
+        background-blend-mode: darken;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    /* Reposition trailer button for small screens */
+    .trailer-btn {
+        overflow: visible;
+        position: absolute;
+        left: 35%;
+        top: 76%;
+        margin: 0 auto;
+    }
+
+    /* Animation setup for trailer button icon and text */
+    .trailer-btn .icon,
+    .trailer-btn .text {
+        position: absolute;
+        left: 50%;
+        top: 76%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        margin-top: 5px;
+    }
+
+    .trailer-btn .icon {
+        animation: fadeInOut 4s linear infinite;
+        color: white;
+        font-size: 3rem;
+    }
+
+    .trailer-btn .text {
+        animation: fadeInOut 4s linear infinite;
+        animation-delay: 2s;
+        color: #fff;
+        font-weight: bold;
+        font-size: 1.3rem;
+        white-space: nowrap;
+    }
+
+    .overview {
+        -webkit-line-clamp: 2;
+    }
 }
 
-@media (min-width: 500px) {}
+/* Responsive styling for larger screens */
+@media (min-width: 501px) {
+    .trailer-btn {
+        justify-content: flex-start;
+        gap: 0.5rem;
+    }
+
+    .trailer-btn .icon,
+    .trailer-btn .text {
+        position: static;
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+
+    .trailer-btn .text {
+        max-width: 0;
+        overflow: hidden;
+        transition: max-width 0.5s ease;
+    }
+
+    .trailer-btn:hover .text {
+        max-width: 200px;
+    }
+
+    .overview {
+        -webkit-line-clamp: 2;
+    }
+}
+
+/* Fade in/out keyframes for trailer button elements */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

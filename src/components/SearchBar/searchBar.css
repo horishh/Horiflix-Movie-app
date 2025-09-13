@@ -22,8 +22,8 @@
 }
 
 .search-icon {
-    font-size: var(--font-size-lg);
-    margin: 0 5px;
+    font-size: 30px;
+    margin: 0 6px;
     background: none;
     border: none;
     transition: transform 0.3s ease, color 0.3s ease;

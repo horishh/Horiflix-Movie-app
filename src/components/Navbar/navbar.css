@@ -6,7 +6,7 @@
     --accent-color: #1d9ce1;
     --nav-height: 55px;
     --font-size-base: 1rem;
-    --font-size-lg: 1.25rem;
+    --font-size-lg: 1.3rem;
     --color-gold: #fbc607;
 }
 
@@ -63,7 +63,6 @@
 /* === Theme Button & Icons === */
 .theme-toggle,
 .icons {
-    font-size: 1.3rem;
     color: var(--text-color);
     display: flex;
     flex-direction: column;
@@ -111,7 +110,7 @@
 /* === Responsive: Mobile (max 768px) === */
 @media (max-width: 768px) {
     .navbar-container {
-        height: 56px;
+        height: 60px;
         padding: 0 1rem;
     }
 
