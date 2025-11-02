@@ -85,7 +85,7 @@ const Banner = ({
       <div className="absolute inset-0 bg-gradient-to-t from-[#191919] via-black/70 to-transparent z-0"></div>
 
       {/* Content */}
-      <div className="absolute bottom-0 left-0 z-10 p-6 md:p-10 max-w-2xl flex flex-col justify-end mb-10">
+      <div className="absolute bottom-0 left-0 z-10 p-6 pb-20 md:p-10 max-w-2xl flex flex-col justify-end mb-10">
         {logo ? (
           <img src={logo} alt={title} className="w-auto mb-3 max-h-30" />
         ) : (
