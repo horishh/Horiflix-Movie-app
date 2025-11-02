@@ -125,7 +125,7 @@ const Detail = () => {
             href={`https://www.youtube.com/watch?v=${trailer.key}`}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 mt-8 text-[#f59e0b] hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 mt-8 text-[#f59e0b] hover:text-white transition-colors relative z-50"
           >
             <IoPlayCircleOutline className="text-5xl" />
             <span className="text-sm font-medium">Watch Trailer</span>

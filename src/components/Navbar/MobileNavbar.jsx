@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 
 const MobileNavbar = () => {
   return (
-    <div className="mobile-nav z-100">
+    <div className="mobile-nav">
       <div className="icon-container">
         <NavLink
           to="/"

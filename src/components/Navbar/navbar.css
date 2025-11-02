@@ -99,6 +99,7 @@
     width: 100%;
     font-size: var(--font-size-lg);
     cursor: pointer;
+    z-index: 30
 }
 
 /* === Responsive: Mobile (max 768px) === */
