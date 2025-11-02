@@ -86,34 +86,17 @@
 
 /* === Mobile Navigation === */
 .mobile-nav {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    background: black;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 0.8rem 0;
-    transition: transform 0.3s ease-in-out;
-    z-index: 30;
-
-    padding-bottom: max(env(safe-area-inset-bottom), 0.8rem);
-    height: auto;
-    margin: 0;
-    inset-inline: 0;
-
-
-    position: fixed;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    -webkit-transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
-
-
-    background-clip: padding-box;
+    background: black;
+    backdrop-filter: blur(10px);
+    padding: 0.6rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    will-change: transform;
+    transition: transform 0.3s ease;
 }
+
 
 /* === Responsive: Mobile (max 768px) === */
 @media (max-width: 768px) {
