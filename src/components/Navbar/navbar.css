@@ -91,7 +91,7 @@
     right: 0;
     bottom: 0;
     width: 100%;
-    background: rgba(25, 25, 25, 0.95);
+    background: black;
     display: flex;
     justify-content: space-around;
     align-items: center;
