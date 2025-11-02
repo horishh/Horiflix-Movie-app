@@ -39,7 +39,7 @@ body.light {
     --bg-color: #ededed;
     --text-color: #000;
     --color-gold: #f59e0b;
-
+    --shadow: 0px -9px 20px -5px #242424;
     background-color: var(--bg-color);
     color: var(--text-color);
 }
@@ -96,10 +96,11 @@ body.light,
 /* === Theme: Dark === */
 body.dark {
     color: var(--text-color);
+    --shadow: none;
 }
 
 body.dark .content {
-    background-color: #1d1d1d;
+    background-color: #191919;
 }
 
 body.dark .card {

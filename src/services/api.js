@@ -33,3 +33,21 @@ export const getMovieDetail = (id) =>
 
 export const getTvDetail = (id) =>
   fetchFromApi(`/tv/${id}`, { append_to_response: "videos" });
+
+export const getMovieImages = async (id) => {
+  const response = await axios.get(`${baseUrl}/movie/${id}/images`, {
+    params: {
+      api_key: apiKey,
+    },
+  });
+  return response.data;
+};
+
+export const getTvImages = async (id) => {
+  const response = await axios.get(`${baseUrl}/tv/${id}/images`, {
+    params: {
+      api_key: apiKey,
+    },
+  });
+  return response.data;
+};

@@ -81,10 +81,15 @@ const Home = () => {
       {/* Banner section: shows only when not searching */}
       {!isSearching && !hasSearchResults && banner && (
         <Banner
+          id={banner.id}
+          type={banner.title ? "movie" : "tv"}
           title={banner?.title || banner?.name}
           poster_path={`https://image.tmdb.org/t/p/original${
             banner?.backdrop_path || banner?.poster_path || ""
           }`}
+          overview={banner?.overview}
+          rating={banner?.vote_average}
+          genre_ids={banner?.genre_ids}
         />
       )}
 

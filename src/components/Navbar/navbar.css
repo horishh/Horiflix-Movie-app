@@ -10,7 +10,6 @@
     --color-gold: #fbc607;
 }
 
-
 /* === Navbar Layout === */
 .navbar-container {
     display: flex;
@@ -31,7 +30,6 @@
     display: flex;
 }
 
-
 /* === Logo === */
 .logo {
     font-size: var(--font-size-lg);
@@ -39,7 +37,6 @@
     color: var(--color-gold);
     margin-right: 10px;
 }
-
 
 /* === Navigation Links === */
 .desktop-nav {
@@ -82,12 +79,10 @@
     align-items: center;
 }
 
-
 /* === Page Content Wrapper === */
 .content {
     margin-top: 49px;
 }
-
 
 /* === Mobile Navigation === */
 .mobile-nav {
@@ -96,7 +91,7 @@
     padding-right: 30px;
     align-items: center;
     background-color: var(--nav-bg-color);
-    height: var(--nav-height);
+    height: 70px;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -105,7 +100,6 @@
     font-size: var(--font-size-lg);
     cursor: pointer;
 }
-
 
 /* === Responsive: Mobile (max 768px) === */
 @media (max-width: 768px) {
@@ -141,7 +135,6 @@
     }
 }
 
-
 /* === Responsive: Desktop (min 768px) === */
 @media (min-width: 768px) {
     .mobile-nav {
@@ -149,18 +142,18 @@
     }
 
     .navbar-container {
-        padding: 0 3rem;
-        max-width: 72rem;
+        padding: 0 8%;
+        max-width: 1600px;
         margin-left: auto;
         margin-right: auto;
     }
 
     .content {
         margin-top: var(--nav-height);
-        max-width: 72rem;
+        max-width: 1600px;
         margin-left: auto;
         margin-right: auto;
-        box-shadow: 0px -9px 20px -5px #242424;
+        box-shadow: var(--shadow);
     }
 
     .desktop-nav>p:first-of-type {

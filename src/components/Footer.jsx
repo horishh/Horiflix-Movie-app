@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="py-2 mt-4 shadow-[0px_-6px_20px_-5px_rgba(0,_0,_0,_0.1)]">
+    <footer className="pt-1 pb-4 mt-4 shadow-[0px_-6px_20px_-5px_rgba(0,_0,_0,_0.1)]">
       <div className="max-w-7xl mx-auto mb-3 px-4 flex flex-col md:flex-row justify-between items-center">
         <p className="text-sm mb-2 md:mb-0">
           &copy; {new Date().getFullYear()} Developed by{" "}
