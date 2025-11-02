@@ -1,12 +1,35 @@
-# React + Vite
+🎬 Horiflix
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Horiflix is a modern movie and TV show web application built with React and Vite.
+It fetches real-time data from The Movie Database (TMDB) API to display trending, popular, and top-rated content.
 
-Currently, two official plugins are available:
+🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🎥 Browse movies and TV shows — fetched directly from TMDB API
 
-## Expanding the ESLint configuration
+🔍 Search — find movies and shows by title
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🧭 Detailed info pages — view descriptions, release dates, ratings, and posters
+
+⚡ Fast performance — powered by Vite’s lightning-fast dev server
+
+📱 Responsive design — works smoothly across desktop, tablet, and mobile devices
+
+🌙 (Optional) Dark/Light theme — toggle visual appearance
+
+🛠️ Tech Stack
+
+React + Vite
+
+TMDB API
+
+Axios or Fetch for API requests
+
+React Router DOM for navigation
+
+TailwindCSS for styling
+
+👨‍💻 Developer
+
+Horiflix
+Developed by Horie Kyazimova
